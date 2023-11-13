@@ -83,17 +83,16 @@ jobs:
       with:
         path: './jest-html-report'
 
-    # - name: Deploy to GitHub Pages
-    #   id: deployment
-    #   uses: actions/deploy-pages@v1
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
 
-
-#     - name: Deploy
-#       uses: JamesIves/github-pages-deploy-action@v4
-#       with:
-#         folder: jest-html-report
-#         clean: true
-#         token: ${{ secrets.TOKEN }}
+#    - name: Deploy
+#      uses: JamesIves/github-pages-deploy-action@v4
+#      with:
+#        folder: jest-html-report
+#        clean: true
+#        ssh-key: ${{ secrets.SSH_KEY }}
 
   deploy:
     environment:
@@ -106,6 +105,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: './jest-html-report'
-#       - name: Deploy to GitHub Pages
-#         id: deployment
-#         uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
